@@ -74,5 +74,125 @@ namespace UnitTest1
 			// assert
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(getCycleRightShiftTwoDigitNumberWithZeroShirt_Test_C2) {
+			//arrange
+			int a = 12;
+			int shift = 0;
+			int expected = 12;
+
+			// act
+			int result = Class::getCycleRightShiftNumber(a, shift);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(getCycleRightShiftTwoDigitNumberWithOneShirt_Test_C2) {
+			//arrange
+			int a = 12;
+			int shift = 1;
+			int expected = 21;
+
+			// act
+			int result = Class::getCycleRightShiftNumber(a, shift);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(getCycleRightShiftOneDigitNumberWithZeroShirt_Test_C2) {
+			//arrange
+			int a = 9;
+			int shift = 0;
+			int expected = 9;
+
+			// act
+			int result = Class::getCycleRightShiftNumber(a, shift);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(getCycleRightShiftOneDigitNumberWithOneShirt_Test_C2) {
+			//arrange
+			int a = 9;
+			int shift = 1;
+			int expected = 9;
+
+			// act
+			int result = Class::getCycleRightShiftNumber(a, shift);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(sumEvenNumbers_Test_C2_0) {
+			//arrange
+			double expected = 0;
+			double** M;
+
+			// act
+			double result = Class::sumEvenNumbers(M, 0);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(sumEvenNumbers_Test_C2_1) {
+			//arrange
+			double expected = 0;
+
+			int size = 1;
+			double** M = new double* [size];
+			for (int i = 0; i < size; i++) {
+				M[i] = new double[size];
+				for (int j = 0; j < size; j++)
+					M[i][j] = 1;
+			}
+
+			// act
+			double result = Class::sumEvenNumbers(M, size);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(sumEvenNumbers_Test_C2_21) {
+			//arrange
+			double expected = 0;
+			int size = 2;
+			double** M = new double* [size];
+			for (int i = 0; i < size; i++) {
+				M[i] = new double[size];
+				for (int j = 0; j < size; j++)
+					M[i][j] = 1;
+			}
+
+			// act
+			double result = Class::sumEvenNumbers(M, size);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(sumEvenNumbers_Test_C2_22) {
+			//arrange
+			double expected = 2;
+
+			int size = 2;
+			double** M = new double* [size];
+			for (int i = 0; i < size; i++) {
+				M[i] = new double[size];
+				for (int j = 0; j < size; j++)
+					M[i][j] = 2;
+			}
+
+			// act
+			double result = Class::sumEvenNumbers(M, size);
+
+			// assert
+			Assert::AreEqual(expected, result);
+		}
 	};
 }

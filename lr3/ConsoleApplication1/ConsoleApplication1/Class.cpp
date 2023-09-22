@@ -8,7 +8,7 @@ int Class::getOddRankAndReverse(int a)
 	return b;
 }
 
- int Class::getEvenRankWithMaxEvenValue(int a)
+int Class::getEvenRankWithMaxEvenValue(int a)
 {
 	int maxR = 0;
 	int maxValue = 0;
@@ -24,4 +24,35 @@ int Class::getOddRankAndReverse(int a)
 		}
 	}
 	return maxR;
+}
+
+int Class::getCycleRightShiftNumber(int a, int shift) {
+	int highDigit = 1;
+	// Подсчет кол-ва разрядов
+	while (a / (highDigit * 10))
+		highDigit *= 10;
+
+	// Сдвиг числа
+	for (int i = 0;
+		i < shift;
+		i++) {
+		int temp = a % 10;
+		a = a / 10 + highDigit * temp;
+	}
+
+	return a;
+}
+
+double Class::sumEvenNumbers(double** A, int size)
+{
+	double sumA = 0;
+	for (int i = 0;
+		i < size;
+		i++)
+		for (int j = 0;
+			j < size - i - 1;
+			j++)
+			if ((int)A[i][j] % 2 == 0)
+				sumA += A[i][j];
+	return sumA;
 }
