@@ -130,7 +130,7 @@ namespace UnitTest1
 		TEST_METHOD(sumEvenNumbers_Test_C2_0) {
 			//arrange
 			double expected = 0;
-			double** M;
+			double** M = new double*[0];
 
 			// act
 			double result = Class::sumEvenNumbers(M, 0);
