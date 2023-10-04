@@ -10,6 +10,8 @@ namespace ConsoleApp1
     internal class Program
     {
 
+        public static Random rnd = new Random();
+
 
         static void Main(string[] args)
         {
@@ -40,6 +42,8 @@ namespace ConsoleApp1
                 teorStd = calcStd(nus[i]);
                 teorDelta = calcDelta(nus[i]);
 
+                Console.WriteLine("Etta: " + nus[i]);
+
                 Console.WriteLine("Длина программы L:");
                 Console.WriteLine("П: " + Ls.Average() + "\tТ:" + teorL);
 
@@ -50,7 +54,7 @@ namespace ConsoleApp1
                 Console.WriteLine("П: " + Std + "\tТ:" + teorStd);
 
                 Console.WriteLine("Относительной ожидаемой погрешности Delta:");
-                Console.WriteLine("П: " + Delta + "\tТ:" + teorDelta);
+                Console.WriteLine("П: " + Delta + "\tТ:" + teorDelta + "\n");
 
             }
 
@@ -62,7 +66,7 @@ namespace ConsoleApp1
             List<int> programText = new List<int>();
 
             int[] isTicketInText = new int[nu];
-            Random rnd = new Random();
+            
             while (isTicketInText.Sum() != nu)
             {
                 int tmp = rnd.Next(nu);
