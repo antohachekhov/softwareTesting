@@ -46,5 +46,22 @@ namespace MatrixTests
             // assert
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void returnNotEqualMatrix()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            A[0, 0] = 1; A[1, 0] = 2; A[0, 1] = 3; A[1, 1] = 4;
+
+            Matrix B = new Matrix(2, 2);
+            B[0, 0] = 1; B[1, 0] = 3; B[0, 1] = 3; B[1, 1] = 4;
+
+            //act
+            bool result = A == B;
+
+            // assert
+            Assert.IsFalse(result);
+        }
     }
 }

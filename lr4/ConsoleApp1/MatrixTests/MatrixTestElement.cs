@@ -9,7 +9,7 @@ namespace MatrixTests
     {
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void IOutOfBoundsIsLessZero_Expected_MyException()
+        public void Get_IOutOfBoundsIsLessZero_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -20,7 +20,7 @@ namespace MatrixTests
 
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void JOutOfBoundsIsLessZero_Expected_MyException()
+        public void Get_JOutOfBoundsIsLessZero_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -31,7 +31,7 @@ namespace MatrixTests
 
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void IOutOfBoundsIsEqualLength_Expected_MyException()
+        public void Get_IOutOfBoundsIsEqualLength_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -42,7 +42,7 @@ namespace MatrixTests
 
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void JOutOfBoundsIsEqualZero_Expected_MyException()
+        public void Get_JOutOfBoundsIsEqualZero_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -53,7 +53,51 @@ namespace MatrixTests
 
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void IOutOfBoundsIsHightLength_Expected_MyException()
+        public void Set_IOutOfBoundsIsLessZero_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int i = -1;
+            //act
+            A[i, 0] = 10;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Set_JOutOfBoundsIsLessZero_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int j = -1;
+            //act
+            A[0, j] = 10;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Set_IOutOfBoundsIsEqualLength_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int i = 2;
+            //act
+            A[i, 0] = 10;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Set_JOutOfBoundsIsEqualZero_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int j = -1;
+            //act
+            A[0, j] = 10;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Get_IOutOfBoundsIsHightLength_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -64,7 +108,7 @@ namespace MatrixTests
 
         [TestMethod]
         [ExpectedException(typeof(MyException))]
-        public void JOutOfBoundsIsHightZero_Expected_MyException()
+        public void Get_JOutOfBoundsIsHightZero_Expected_MyException()
         {
             //arrange
             Matrix A = new Matrix(2, 2);
@@ -72,6 +116,30 @@ namespace MatrixTests
             //act
             int el = A[0, j];
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Set_IOutOfBoundsIsHightLength_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int i = 3;
+            //act
+            A[i, 0] = 10;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MyException))]
+        public void Set_JOutOfBoundsIsHightZero_Expected_MyException()
+        {
+            //arrange
+            Matrix A = new Matrix(2, 2);
+            int j = 3;
+            //act
+            A[0, j] = 10;
+        }
+
+
 
         [TestMethod]
         public void getMatrixElement()
