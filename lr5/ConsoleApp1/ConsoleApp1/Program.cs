@@ -90,7 +90,7 @@ namespace ConsoleApp1
 
         static double calcDisp(int etta)
         {
-            return Math.Pow(Math.PI, 2) * Math.Pow(etta, 2);
+            return Math.Pow(Math.PI, 2) * Math.Pow(etta, 2) / 6;
         }
 
         static double calcPractDisp(double[] Ls)
@@ -120,7 +120,7 @@ namespace ConsoleApp1
 
         static double calcDelta(int etta)
         {
-            return 1 / (2 * Math.Pow(etta, 2));
+            return Math.Sqrt(calcDisp(etta)) / calcL(etta);//(2 * Math.Pow(etta, 2));
         }
 
         static double calcPractDelta(double[] Ls)
